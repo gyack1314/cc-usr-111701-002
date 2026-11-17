@@ -1,0 +1,38 @@
+{
+  "kind": "walk-plan",
+  "protocol": "iiif-presentation",
+  "collection": "exhibit-13",
+  "manifest_url": "https://museum.example.test/iiif/manifest/13",
+  "tokens": [
+    {"label": "museum", "token": "tok-exhibit-9", "origins": ["https://museum.example.test"]}
+  ],
+  "session": {
+    "https://museum.example.test/iiif/manifest/13": {"status": 200, "headers": {"ETag": "\"exhibit-13-v1\"", "Content-Type": "application/ld+json"}, "body": {
+      "id": "https://museum.example.test/iiif/manifest/13",
+      "type": "Manifest",
+      "items": [
+        {"id": "canvas/1", "type": "Canvas", "items": [
+          {"id": "../pages/1", "type": "AnnotationPage"}
+        ]}
+      ]
+    }},
+    "https://museum.example.test/iiif/pages/1": {"status": 200, "headers": {"Content-Type": "application/ld+json"}, "body": {
+      "id": "1",
+      "type": "AnnotationPage",
+      "items": [
+        {"id": "a1", "type": "Annotation", "motivation": "painting",
+         "target": "https://museum.example.test/iiif/manifest/canvas/1",
+         "body": {"id": "/media/ok.jpg", "type": "Image", "format": "image/jpeg"}},
+        {"id": "a2", "type": "Annotation", "motivation": "painting",
+         "target": "https://museum.example.test/iiif/manifest/canvas/1",
+         "body": {"id": "/media/gone.jpg", "type": "Image", "format": "image/jpeg"}},
+        {"id": "a3", "type": "Annotation", "motivation": "painting",
+         "target": "https://museum.example.test/iiif/manifest/canvas/1",
+         "body": {"id": "/media/secret.jpg", "type": "Image", "format": "image/jpeg"}}
+      ]
+    }},
+    "https://museum.example.test/media/ok.jpg": {"status": 200, "headers": {"Content-Type": "image/jpeg"}, "body_base64": "/9j/4EVYSElCSVQtMTMtT0v/2Q=="},
+    "https://museum.example.test/media/gone.jpg": {"status": 410, "headers": {}, "body_text": "withdrawn by lender"},
+    "https://museum.example.test/media/secret.jpg": {"status": 403, "headers": {}, "body_text": "restricted"}
+  }
+}

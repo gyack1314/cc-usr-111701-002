@@ -1,0 +1,54 @@
+{
+  "kind": "walk-plan",
+  "protocol": "iiif-presentation",
+  "collection": "exhibit-12",
+  "manifest_url": "https://museum.example.test/iiif/manifest/12",
+  "tokens": [
+    {"label": "museum", "token": "tok-exhibit-1", "origins": ["https://museum.example.test"]}
+  ],
+  "session": {
+    "https://museum.example.test/iiif/manifest/12": {"status": 301, "headers": {"Location": "/iiif/manifests/12"}},
+    "https://museum.example.test/iiif/manifests/12": {"status": 200, "headers": {"ETag": "\"exhibit-12-v3\"", "Content-Type": "application/ld+json"}, "body": {
+      "id": "12",
+      "type": "Manifest",
+      "items": [
+        {"id": "../canvas/1", "type": "Canvas", "items": [
+          {"id": "../pages/1", "type": "AnnotationPage"}
+        ]},
+        {"id": "../canvas/2", "type": "Canvas", "items": [
+          {"id": "p/1", "type": "AnnotationPage", "items": [
+            {"id": "a/1", "type": "Annotation", "motivation": "painting",
+             "target": "../canvas/2",
+             "body": {"id": "../../media/3.jpg", "type": "Image", "format": "image/jpeg"}}
+          ]}
+        ]}
+      ]
+    }},
+    "https://museum.example.test/iiif/pages/1": {"status": 200, "headers": {"Content-Type": "application/ld+json"}, "body": {
+      "id": "1",
+      "type": "AnnotationPage",
+      "next": {"id": "2", "type": "AnnotationPage"},
+      "items": [
+        {"id": "anno/1", "type": "Annotation", "motivation": "painting",
+         "target": "https://museum.example.test/iiif/canvas/1",
+         "body": {"id": "../../media/1.jpg", "type": "Image", "format": "image/jpeg"}},
+        {"id": "anno/2", "type": "Annotation", "motivation": "commenting",
+         "target": "https://museum.example.test/iiif/canvas/1",
+         "body": {"type": "TextualBody", "value": "旁注：展签已按第三版清单校对", "format": "text/plain"}}
+      ]
+    }},
+    "https://museum.example.test/iiif/pages/2": {"status": 200, "headers": {"Content-Type": "application/ld+json"}, "body": {
+      "id": "2",
+      "type": "AnnotationPage",
+      "items": [
+        {"id": "anno/3", "type": "Annotation", "motivation": "painting",
+         "target": "https://museum.example.test/iiif/canvas/1",
+         "body": {"id": "https://cdn.mirror.test/img/2.jpg", "type": "Image", "format": "image/jpeg"}}
+      ]
+    }},
+    "https://museum.example.test/media/1.jpg": {"status": 302, "headers": {"Location": "https://cdn.mirror.test/img/1.jpg"}},
+    "https://cdn.mirror.test/img/1.jpg": {"status": 200, "headers": {"Content-Type": "image/jpeg"}, "body_base64": "/9j/4EVYSElCSVQtMTItSU1HLTH/2Q=="},
+    "https://cdn.mirror.test/img/2.jpg": {"status": 200, "headers": {"Content-Type": "image/jpeg"}, "body_base64": "/9j/4EVYSElCSVQtMTItSU1HLTL/2Q=="},
+    "https://museum.example.test/media/3.jpg": {"status": 200, "headers": {"Content-Type": "image/jpeg"}, "body_base64": "/9j/4EVYSElCSVQtMTItSU1HLTP/2Q=="}
+  }
+}
