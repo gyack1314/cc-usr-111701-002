@@ -1,0 +1,52 @@
+{
+  "protocol": "iiif-presentation",
+  "collection": "sample-002",
+  "records": [
+    {
+      "kind": "manifest",
+      "id": "manifest-1",
+      "version": "v1",
+      "refs": [],
+      "payload": {
+        "source": "synthetic",
+        "position": 0
+      }
+    },
+    {
+      "kind": "canvas",
+      "id": "canvas-2",
+      "version": "v1",
+      "refs": [
+        "manifest-1"
+      ],
+      "payload": {
+        "source": "synthetic",
+        "position": 1
+      }
+    },
+    {
+      "kind": "annotation",
+      "id": "annotation-3",
+      "version": "v1",
+      "refs": [
+        "canvas-2"
+      ],
+      "payload": {
+        "source": "synthetic",
+        "position": 2
+      }
+    },
+    {
+      "kind": "resource",
+      "id": "resource-4",
+      "version": "v1",
+      "refs": [
+        "annotation-3"
+      ],
+      "payload": {
+        "source": "synthetic",
+        "position": 3
+      }
+    }
+  ]
+}
