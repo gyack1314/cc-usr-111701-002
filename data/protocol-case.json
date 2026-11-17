@@ -1,0 +1,14 @@
+{
+  "kind": "source-records",
+  "protocol": "iiif-presentation",
+  "collection": "protocol-sample",
+  "source_url": "https://museum.example.test/iiif/manifest/12",
+  "assets": [
+    {
+      "path": "protocol-source.bin",
+      "bytes": 743,
+      "sha256": "fe818aef4903d75b0be7fccd868ad9d999e0769e844bdaeff3d33b22922f9df2"
+    }
+  ],
+  "calls": []
+}
