@@ -5,3 +5,5 @@
 ## 已接收的协议资料
 现有入口识别 IIIF Presentation 3 的 Manifest、Canvas、AnnotationPage 和 Annotation 嵌套身份，并保存 painting 资源的 target 与 body。外部引用页、授权和版本闭包仍由业务扩展。
 
+
+同集合第二次来源接收保存在 data/conflict-case.json。冲突事务必须保持第一份收据和旧投影。

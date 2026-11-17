@@ -1,0 +1,28 @@
+{
+  "id": "https://museum.example.test/iiif/manifest/12",
+  "type": "Manifest",
+  "items": [
+    {
+      "id": "https://museum.example.test/iiif/canvas/1",
+      "type": "Canvas",
+      "items": [
+        {
+          "id": "https://museum.example.test/iiif/page/1",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://museum.example.test/iiif/annotation/1",
+              "type": "Annotation",
+              "motivation": "painting",
+              "target": "https://museum.example.test/iiif/canvas/1",
+              "body": {
+                "id": "https://museum.example.test/media/2.jpg",
+                "type": "Image"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
